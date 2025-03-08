@@ -16,7 +16,8 @@ const clientOptions = {
     }
 }
 
-const socket = io('http://localhost:8000', clientOptions);
+// const socket = io('http://localhost:8000', clientOptions);
+const socket = io('https://slack-clone-ebon-seven.vercel.app', clientOptions);
 
 const nameSpacesSockets = [];
 const listeners = {
