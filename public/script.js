@@ -94,7 +94,7 @@ socket.on('nsList',(nsData)=>{
         if(!nameSpacesSockets[ns.id]){
             //There is no socket at this nsID, So make a new connection
             //join this namespace with io()
-            nameSpacesSockets[ns.id] = io(`http://localhost:8000${ns.endpoint}`);
+            nameSpacesSockets[ns.id] = io(`https://slack-clone-ebon-seven.vercel.app${ns.endpoint}`);
         }
 
         addListeners(ns.id);

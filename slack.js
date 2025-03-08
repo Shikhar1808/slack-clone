@@ -9,7 +9,12 @@ app.use(express.static(__dirname + '/public',{type: 'application/javascript'}));
 
 const expressServer= app.listen(8000); //handling http trafic
 console.log("Server is running on port 8000");
-const io = socketio(expressServer); //handling TCP traffic
+const io = socketio(expressServer,{
+    cors: {
+        origin: "https://slack-clone-ebon-seven.vercel.app",
+        methods: ["GET", "POST"]
+    }
+}); //handling TCP traffic
 // app.set('io',io);
 
 //Http to notify TCP that something is changed
